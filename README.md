@@ -12,3 +12,12 @@ Menschen haben Probleme sich richtig abzumelden und die Mails zu formulieren. Mi
 Datensicherung und einfache aktualisierung. Projekt wird self gehostet in einem subfolder in einem wordpresss pProjekt.
 
 
+# Auto-update
+
+commands:
+
+sudo rm /var/www/html/abmeldung/*
+cd ~/Documents/juso-abmeldung
+sudo rm -r juso-abmeldung
+git clone https://github.com/Fohwa/juso-abmeldung.git
+sudo mv juso-abmeldung/* /var/www/html/abmeldung
