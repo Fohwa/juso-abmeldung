@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abmeldung</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Abmeldung</h1>
+        
+        <!-- Name Input Field -->
+        <div class="input-container">
+            <label for="userName">Dein Name:</label>
+            <input type="text" id="userName" placeholder="Vorname Nachname" class="inputField" />
+        </div>
+
+        <!-- Display Abmeldung Date -->
+        <div class="date-container">
+            <p>Abmeldung für: <span id="specificDate"></span></p>
+        </div>
+
+        <p>Einmalige oder permanente Abmedlung?</p>
+
+        <!-- Permanent Abmeldung Button -->
+        <button class="button" id="permanentAbmeldung">Permanent Abmelden</button>
+
+        <!-- Abmeldung at Specific Date Button -->
+        <button class="button" id="dateAbmeldung">Abmeldung für <span id="specificDateBtn"></span></button>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Das hat nicht geklappt?</h2>
+        <p>Unten steht eine Vorlage, die du so kopieren kannst:</p>
+        <p class="mail">
+            <br>An: stupa@uni-muenster.de
+            <br>CC: stupa.abmeldung@gmail.com
+            <br>Betreff: Abmeldung StuPa für <span id="specificDateMail"></span>
+            <br>
+            <br>Liebes Präsidium,
+            <br>hiermit würde ich mich gerne für die StuPa Sitzung für die Juso-HSG am <span id="specificDateMail2"></span> abmelden.
+            <br>
+            <br>Liebe Grüße
+            <br><span id="nameMail"></span>
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <h2><img class="icon" src="rose.png"/>Stupa Abmeldung für die JusoHSG Münster</h2>
+        <p>Bei Problemen schreib gerne an <a href="mailto:stupa.abmeldung@gmail.com">stupa.abmeldung@gmail.com</a></p>
+    </div>
+    <br>
+
+    <script>
+        const abmeldungDate = getDate();
+        // Display the date from the JavaScript file
+        document.getElementById('specificDate').textContent = abmeldungDate;
+        document.getElementById('specificDateMail').textContent = abmeldungDate;
+        document.getElementById('specificDateMail2').textContent = abmeldungDate;
+        document.getElementById('specificDateBtn').textContent = abmeldungDate;
+        document.getElementById('nameMail').textContent = getUserName();
+
+        // Get the name input and email the user with that name
+        function getUserName() {
+            const userName = document.getElementById('userName').value.trim();
+            return userName ? userName : "[Trage hier deinen Namen ein]"; // Fallback in case no name is provided
+        }
+
+        function getDate() {
+            const urlParams = new URLSearchParams(window.location.search);
+            var date = "";
+            try {
+                date = urlParams.get('date');
+            }
+            catch {
+            }
+            if (date == "" || date == null) {
+                return "4.11.2024";
+
+            } else {
+                return date;
+            }
+        }
+        
+        
+        // Permanent Abmeldung Email
+
+
+        
+        document.getElementById('permanentAbmeldung').addEventListener('click', () => {
+            const userName = getUserName();
+            window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Permanente%20Abmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20alle%20StuPa%20Sitzungen%20für%20die%20Juso-HSG%20permanent%20abmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
+        });
+
+        // Abmeldung at Specific Date Email
+        document.getElementById('dateAbmeldung').addEventListener('click', () => {
+            const userName = getUserName();
+            const abmeldungDate = getDate();
+            window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Abmeldung%20StuPa%20für%20den%20${abmeldungDate}&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20die%20StuPa%20Sitzung%20für%20die%20Juso-HSG%20am%20${abmeldungDate}%20abmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
+        });
+    </script>
+</body>
+</html>
