@@ -17,6 +17,6 @@ Datensicherung und einfache aktualisierung. Projekt wird self gehostet in einem 
 durch ausführen von update.sh wird eine neue Version von github geholt.
 Das Script wurde lokal in dem Ordner ~/script hinterlegt. Daher kann in der lokalen Umgebung einfach folgender Befehl ausgeführt werden:
 
-'''bash
+```bash
 bash ~/script/update.sh
-'''
+```
