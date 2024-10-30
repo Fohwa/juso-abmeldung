@@ -14,10 +14,9 @@ Datensicherung und einfache aktualisierung. Projekt wird self gehostet in einem 
 
 # Auto-update
 
-commands:
+durch ausführen von update.sh wird eine neue Version von github geholt.
+Das Script wurde lokal in dem Ordner ~/script hinterlegt. Daher kann in der lokalen Umgebung einfach folgender Befehl ausgeführt werden:
 
-sudo rm /var/www/html/abmeldung/*
-cd ~/Documents/juso-abmeldung
-sudo rm -r juso-abmeldung
-git clone https://github.com/Fohwa/juso-abmeldung.git
-sudo mv juso-abmeldung/* /var/www/html/abmeldung
+'''bash
+bash ~/script/update.sh
+'''
