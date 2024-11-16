@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>einmalig</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="main">
+
+    </p>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const date = urlParams.get('date');
+        if (name == "" || !name) {
+            document.getElementById("main").innerHTML = "URL ist falsch: kein Name";
+        } else if (date == "" || !date) {
+            document.getElementById("main").innerHTML += "\nURL ist falsch: kein Datum";
+        } else {
+            window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Abmeldung%20StuPa%20für%20den%20${date}&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20die%20StuPa%20Sitzung%20für%20die%20Juso-HSG%20am%20${date}%20abmelden.%0A%0ALiebe%20Grüße%0A${name}`;
+        }
+    </script>
+</body>
+</html>

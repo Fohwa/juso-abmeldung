@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dauerhaft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p id="main">
+
+    </p>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        if (name != "" && name) {
+          window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Permanente%20Abmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20alle%20StuPa%20Sitzungen%20für%20die%20Juso-HSG%20permanent%20abmelden.%0A%0ALiebe%20Grüße%0A${name}`;  
+        } else {
+            document.getElementById("main").innerHTML = "URL ist falsch: kein Name";
+        }
+    </script>
+</body>
+</html>

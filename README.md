@@ -20,3 +20,12 @@ Das Script wurde lokal in dem Ordner ~/script hinterlegt. Daher kann in der loka
 ```bash
 bash ~/script/update.sh
 ```
+
+
+## Auto-mail
+
+unter dauerhaft.html und einmalig.html kann direkt eine mail geöffnet werden ohne klicken zu müssen. Dafür müssen parameter schon im Link gegeben sein
+
+### Beispiele:
+einmalig: jusohsg-ms.de/abmeldung/einmalig?name=Vorname%20Nachname&date=XX.XX.XXXX
+dauerhaft: jusohsg-ms.de/abmeldung/dauerhaft.html?name=Name
