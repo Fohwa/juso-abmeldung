@@ -66,22 +66,22 @@ p {
 
 /* Purple Button */
 #permanentAbmeldung {
-    background-color: #6a0dad;  /* Purple button */
+    background-color: #ac2614;  /* red button */
     color: #ffffff;
 }
 
 #permanentAbmeldung:hover {
-    background-color: #5a0ca3;  /* Darker purple on hover */
+    background-color: #912011;  /* red button */
 }
 
 /* Red Button */
-#dateAbmeldung {
-    background-color: #d32f2f;  /* Red button */
+#Anmelden {
+    background-color: #106614;  /* Green button */
     color: #ffffff;
 }
 
-#dateAbmeldung:hover {
-    background-color: #b71c1c;  /* Darker red on hover */
+#Anmelden:hover {
+    background-color: #0c4d0f;  /* Darker green on hover */
 }
 
 #specificDate {
