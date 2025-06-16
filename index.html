@@ -33,7 +33,7 @@
         <h2>Das hat nicht geklappt?</h2>
         <p>Unten steht eine Vorlage, die du so kopieren kannst:</p>
         <p class="mail">
-            <br>An: stupa@uni-muenster.de, zwa.2025@uni-muenster.de
+            <br>An: zwa.2025@uni-muenster.de
             <br>CC: stupa.abmeldung@gmail.com
             <br>Betreff: Abmeldung StuPa
             <br>
@@ -62,13 +62,13 @@
         // Abmeldung
         document.getElementById('permanentAbmeldung').addEventListener('click', () => {
             const userName = getUserName();
-            window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Permanente%20Abmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20alle%20StuPa%20Sitzungen%20für%20die%20Juso-HSG%20permanent%20abmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
+            window.location.href = `mailto:zwa.2025@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Permanente%20Abmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20alle%20StuPa%20Sitzungen%20für%20die%20Juso-HSG%20permanent%20abmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
         });
 
         // Anmeldung
         document.getElementById('Anmelden').addEventListener('click', () => {
             const userName = getUserName();
-            window.location.href = `mailto:stupa@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Anmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20die%20nächste%20StuPa%20Sitzung%20für%20die%20Juso-HSG%20anmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
+            window.location.href = `mailto:zwa.2025@uni-muenster.de?cc=stupa.abmeldung@gmail.com&subject=Anmeldung%20StuPa&body=Liebes%20Präsidium,%0A%0Ahiermit%20würde%20ich%20mich%20gerne%20für%20die%20nächste%20StuPa%20Sitzung%20für%20die%20Juso-HSG%20anmelden.%0A%0ALiebe%20Grüße%0A${encodeURIComponent(userName)}`;
         });
     </script>
 </body>
